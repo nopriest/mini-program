@@ -2,3 +2,8 @@
 .van-search__content{
     background-color:#fff !important;
 }
+
+/* 轮播图样式 */
+.swiper-item image{
+    width:100%;
+}
