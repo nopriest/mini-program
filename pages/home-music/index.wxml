@@ -11,10 +11,14 @@
 <swiper class="swiper"
     indicator-dots
     autoplay
-    circular>
+    circular
+    style="height: {{swiper_height}}px;">
     <block wx:for="{{banners}}" wx:key="bannerId">
         <swiper-item class="swiper-item">
-            <image class="image" src="{{item.pic}}" mode="widthFix"></image>
+            <image class="swiper-image" 
+                   src="{{item.pic}}" 
+                   mode="widthFix"
+                   bindload="handleSwiperImageLoaded"></image>
         </swiper-item>
     </block>
 </swiper>
