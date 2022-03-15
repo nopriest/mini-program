@@ -1,5 +1,9 @@
 // pages/home-music/index.js
 import {getBanners} from '../../service/api.music'
+import queryRect from '../../service/query.rect'
+import throttle from '../../utils/throttle'
+
+const throttleQueryRect = throttle(queryRect, 1000)
 
 Page({
 
@@ -37,12 +41,10 @@ Page({
     //轮播图加载完计算图片高度
     handleSwiperImageLoaded: function() {
         //获取图片高度(如何获取image组件的高度)
-        const query = wx.createSelectorQuery()
-        query.select('.swiper-image').boundingClientRect()
-        //query.selectViewport().scrollOffset()   //滚动相关的数据
-        query.exec(res => {
-            const rect = res[0]
-            this.setData({swiper_height:rect.height})
-        })
+        throttleQueryRect(".swiper-image").then(res => {
+           console.log("获取图片高度")
+           const rect = res[0]
+           this.setData({swiper_height:rect.height})
+       })
     },
 })
