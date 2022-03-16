@@ -3,7 +3,6 @@
         "pages/home-music/index",
         "pages/home-video/index",
         "pages/detail-video/index",
-        "pages/detail-search",
         "pages/detail-search/index"
     ],
     "window": {

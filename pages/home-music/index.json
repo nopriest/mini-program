@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-search": "@vant/weapp/search/index",
-    "van-field": "@vant/weapp/field/index"
+    "van-field": "@vant/weapp/field/index",
+    "area-header": "/components/area-header/index"
   }
 }
